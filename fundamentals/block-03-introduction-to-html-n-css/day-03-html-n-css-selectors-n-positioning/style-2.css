@@ -10,7 +10,8 @@
 }
 
 .baloon {
-
+    position: absolute;
+    z-index: 1;
 }
 
 .speach {
