@@ -1,0 +1,16 @@
+h1, p {
+    text-align: center
+}
+
+li:hover {
+    background-color: rgb(7, 250, 250);
+}
+
+li:active {
+    font-family: monospace;
+    font-size: 25px;
+}
+
+li {
+    list-style: none
+}
