@@ -82,3 +82,24 @@ switch (chessPiece.toLowerCase()) {
     default: console.log('Erro, peça inválida.');        
         break;
 }
+
+//7
+
+let givenNote = 95;
+
+if (givenNote >= 90) {
+    console.log('Nota A');
+} else if (givenNote >= 80) {
+    console.log('Nota B');
+} else if (givenNote >= 70) {
+    console.log('Nota C');
+} else if (givenNote >= 60) {
+    console.log('Nota D');
+} else if (givenNote >= 50) {
+    console.log('Nota E');
+} else if (givenNote < 50) {
+    console.log('Nota F');
+} else if (givenNote < 0 || givenNote > 100) {
+    console.log('Erro, nota incorreta')
+}
+
