@@ -16,3 +16,18 @@ if (a > b) {
 } else {
     console.log(b);
 }
+
+//3
+
+const c = 55;
+const d = 65;
+const e = 33;
+
+if (c > d || c > e) {
+    console.log(c);
+} else if (d > c || d > e) {
+    console.log(d);
+} else {
+    console.log(e);
+}
+
