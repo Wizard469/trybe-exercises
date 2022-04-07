@@ -114,3 +114,28 @@ if (number1 % 2 === 0 || number2 % 2 === 0 || number3 % 2 === 0) {
 } else {
     console.log(false)
 }
+
+//9
+
+const number4 = 10;
+const number5 = 15;
+const number6 = 49;
+
+if (number4 % 2 === 1 || number5 % 2 === 1 || number6 % 2 === 1) {
+    console.log(true)
+} else {
+    console.log(false)
+}
+
+//10
+
+const cost = 5;
+const saleValue = 15;
+
+if (cost >= 0 && saleValue >= 0) {
+    const totalCost = cost * 1.2;
+    const profit = (saleValue - totalCost) * 1000;
+    console.log(profit)
+} else {
+    console.log('Erro, valor inválido')
+}
