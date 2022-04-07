@@ -61,3 +61,24 @@ if (anglesArePositives) {
 } else {
     console.log('Erro: ângulo inválido');
 }
+
+//6
+
+let chessPiece = 'queen';
+
+switch (chessPiece.toLowerCase()) {
+    case 'pawn': console.log('Pawn -> Uma casa para frente, no primeiro movimento são duas.');
+        break;
+    case 'king': console.log('King -> Diagonal, horizontal, vertical, apenas uma casa.');
+        break;
+    case 'queen': console.log('Queen -> Diagonal, horizontal, vertical.');
+        break;
+    case 'rook': console.log('Rook -> Horizontal, vertical.');        
+        break;
+    case 'bishop': console.log('bishop -> Diagonais.');        
+        break;
+    case 'knight': console.log('Knight -> L, pode saltar peças.');        
+        break;
+    default: console.log('Erro, peça inválida.');        
+        break;
+}
