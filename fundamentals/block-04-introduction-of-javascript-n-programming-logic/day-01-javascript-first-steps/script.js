@@ -42,3 +42,22 @@ if (number > 0) {
 } else {
     console.log('zero');
 }
+
+//5
+
+const angleA = 60;
+const angleB = 30;
+const angleC = 90;
+
+let anglesArePositives = angleA > 0 && angleB > 0 && angleC > 0;
+
+const anglesSum = angleA + angleB + angleC;
+
+if (anglesArePositives) {
+    if (anglesSum  === 180) {
+        console.log(true);
+    } else if (anglesSum !== 180)
+    console.log(false);
+} else {
+    console.log('Erro: ângulo inválido');
+}
