@@ -23,11 +23,22 @@ const c = 55;
 const d = 65;
 const e = 33;
 
-if (c > d || c > e) {
+if (c > d && c > e) {
     console.log(c);
-} else if (d > c || d > e) {
+} else if (d > c && d > e) {
     console.log(d);
 } else {
     console.log(e);
 }
 
+//4
+
+const number = 10;
+
+if (number > 0) {
+    console.log('positive');
+} else if (number < 0) {
+    console.log('negative');
+} else {
+    console.log('zero');
+}
