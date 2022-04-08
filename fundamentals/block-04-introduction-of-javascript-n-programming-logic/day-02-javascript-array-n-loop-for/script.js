@@ -63,3 +63,15 @@ if (oddNumbers === 0) {
 } else {
     console.log(oddNumbers);
 }
+
+//7
+
+let smallerNumber = Infinity;
+
+for (let i = 0; i < numbers.length; i += 1) {
+    if (numbers[i] < smallerNumber) {
+        smallerNumber = numbers[i];
+    }
+}
+
+console.log(smallerNumber)
