@@ -139,3 +139,36 @@ if (cost >= 0 && saleValue >= 0) {
 } else {
     console.log('Erro, valor inválido')
 }
+
+//11
+
+let INSS;
+let IR;
+
+let grossSalary = 15000.25;
+
+if (grossSalary <= 1556.94) {
+    INSS = grossSalary * 0.08;
+} else if (grossSalary <= 2594.92) {
+    INSS = grossSalary * 0.09;
+} else if (grossSalary <= 5189.82) {
+    INSS = grossSalary * 0.11;
+} else {
+    INSS = 570.88;
+}
+
+let baseSalary = grossSalary - INSS;
+
+if (baseSalary <= 1903.98) {
+    IR = 0;
+} else if (baseSalary <= 2826.65) {
+    IR = (baseSalary * 0.075) - 142.8;
+} else if (baseSalary <= 3751.05) {
+    IR = (baseSalary * 0.15) - 354.8;
+} else if (baseSalary <= 4664.68) {
+    IR = (baseSalary * 0.225) - 636.13;
+} else {
+    IR = (baseSalary * 0.275) - 869.36
+}
+
+console.log("Wage: " + (baseSalary - IR))
