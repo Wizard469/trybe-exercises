@@ -85,3 +85,13 @@ for (let i = 1; i <= 25; i += 1) {
 }
 
 console.log(arr1to25)
+
+//9
+
+let result = [];
+
+for (let i = 0; i < arr1to25.length; i += 1) {
+    result.push(arr1to25[i] * 2);
+}
+
+console.log(result);
