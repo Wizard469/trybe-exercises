@@ -18,10 +18,20 @@ console.log(sumOfNumbers);
 
 //3.
 
-let sumOfNumbers = 0;
+let sum = 0;
 
 for (let i = 0; i < numbers.length; i += 1) {
-        sumOfNumbers += numbers[i];
+        sum += numbers[i];
 }
 
-console.log(sumOfNumbers / numbers.length);
+let average = sum / numbers.length;
+
+console.log(average);
+
+//4
+
+if (average > 20) {
+    console.log("valor maior que 20");
+} else {
+    console.log("valor menor ou igual a 20");
+}
