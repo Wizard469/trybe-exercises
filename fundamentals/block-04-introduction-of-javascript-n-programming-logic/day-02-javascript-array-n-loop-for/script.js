@@ -15,3 +15,13 @@ for (let i = 0; i < numbers.length; i += 1) {
 }
 
 console.log(sumOfNumbers);
+
+//3.
+
+let sumOfNumbers = 0;
+
+for (let i = 0; i < numbers.length; i += 1) {
+        sumOfNumbers += numbers[i];
+}
+
+console.log(sumOfNumbers / numbers.length);
