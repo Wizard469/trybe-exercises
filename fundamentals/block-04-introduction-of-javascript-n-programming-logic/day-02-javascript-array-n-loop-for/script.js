@@ -75,3 +75,13 @@ for (let i = 0; i < numbers.length; i += 1) {
 }
 
 console.log(smallerNumber)
+
+//8
+
+let arr1to25 = [];
+
+for (let i = 1; i <= 25; i += 1) {
+    arr1to25.push(i)
+}
+
+console.log(arr1to25)
