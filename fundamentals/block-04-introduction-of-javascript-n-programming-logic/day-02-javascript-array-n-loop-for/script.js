@@ -47,3 +47,19 @@ for (let i = 0; i < numbers.length; i += 1) {
 }
 
 console.log(largerNumber)
+
+//6
+
+let oddNumbers = 0;
+
+for (let i = 0; i < numbers.length; i += 1) {
+    if (numbers[i] % 2 === 1) {
+        oddNumbers += 1;
+    }
+}
+
+if (oddNumbers === 0) {
+    console.log("nenhum valor ímpar encontrado")
+} else {
+    console.log(oddNumbers);
+}
