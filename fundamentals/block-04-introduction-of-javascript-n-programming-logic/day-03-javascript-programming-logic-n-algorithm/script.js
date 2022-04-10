@@ -41,3 +41,21 @@ for (let i = 0; i < array.length; i += 1) {
 }
 
 console.log(shortestString)
+
+//4
+
+let biggestPrimeNumber = 0;
+
+for (let Number = 0; Number <= 50; Number += 1) {
+  let isPrime = true;
+  for (let Divisor = 2; Divisor < Number; Divisor += 1) {
+    if (Number % Divisor === 0) {
+      isPrime = false;
+    }
+  }
+  if (isPrime) {
+    biggestPrimeNumber = Number;
+  }
+}
+
+console.log(biggestPrimeNumber);
