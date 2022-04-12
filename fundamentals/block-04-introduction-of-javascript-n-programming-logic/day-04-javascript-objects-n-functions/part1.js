@@ -18,3 +18,9 @@ let info = {
   for (let e in info) {
       console.log(e);
   }
+
+  //4 - Faça um novo for/in , mas agora mostre todos os valores das chaves do objeto.
+
+  for (let e in info) {
+    console.log(info[e]);
+}
