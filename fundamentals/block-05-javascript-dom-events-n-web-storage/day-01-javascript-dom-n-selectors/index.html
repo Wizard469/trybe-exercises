@@ -42,6 +42,23 @@
       </section>
     </main>
     <script>
+
+        document.getElementsByTagName("p")[0].innerText = "I'll still see myself in the mirror.";
+        document.getElementsByClassName("main-content")[0].style.backgroundColor = "rgb(76,164,109)";
+        document.getElementsByClassName("center-content")[0].style.backgroundColor = "white";
+        document.getElementsByTagName("h1")[0].innerText = "Full of nothing";
+        function upperCase() {
+            let pUpperCase = document.getElementsByTagName("p")[0];
+            pUpperCase.innerHTML = pUpperCase.innerHTML.toUpperCase();
+        }
+
+        upperCase();
+        
+        let pOnConsole = document.getElementsByTagName("p");
+        for (let i = 0; i < pOnConsole.length; i += 1) {
+            console.log(pOnConsole[i].innerHTML);
+        };
+        
         /*
         Aqui você vai modificar os elementos já existentes utilizando apenas as funções:
         - document.getElementById()
