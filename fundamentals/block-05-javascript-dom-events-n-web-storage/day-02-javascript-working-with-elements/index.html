@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Exercício 5.2</title>
+    <style>
+      section {
+        border-color: black;
+        border-style: solid;
+      }
+
+      .title {
+        text-align: center;
+      }
+
+      .main-content {
+        background-color: yellow;
+      }
+
+      .main-content .center-content {
+        background-color: red;
+        width: 50%;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .main-content .center-content p {
+        font-style: italic;
+      }
+
+      .main-content .left-content {
+        background-color: green;
+        width: 60%;
+        margin-left: 0;
+        margin-right: auto;
+      }
+
+      .main-content .left-content .small-image {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 100%;
+      }
+
+      .main-content .right-content {
+        background-color: blue;
+        width: 60%;
+        margin-left: auto;
+        margin-right: 0;
+      }
+
+      .main-content .description {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+        function addingH1() {
+            const h1 = document.createElement('h1');
+            h1.className = "title";
+            h1.innerText = "Exercício 5.2 - JavaScript DOM";
+            document.body.appendChild(h1);
+        }
+        addingH1();
+
+        function addingMain() {
+            const main = document.createElement('main');
+            main.className = "main-content";
+            document.body.appendChild(main);
+        }
+        addingMain();
+
+        function addingSection() {
+            const centerContent = document.createElement('section');
+            const main = document.getElementsByClassName("main-content")[0];
+            main.style.backgroundColor = "green";
+            centerContent.className = "center-content";
+            main.appendChild(centerContent);
+        }
+        addingSection();
+
+        function addingP() {
+            const p = document.createElement('p');
+            const section = document.getElementsByClassName("center-content")[0];
+            p.innerText = "Writing code in your terminal shouldn't feel like 1978.  Edit your commands like in a modern code editor with selections, cursor positioning, and completion menus."
+            section.appendChild(p);
+        }
+        addingP();
+
+        function addingLeftSection() {
+            const leftContent = document.createElement('section');
+            const main = document.getElementsByClassName('main-content')[0];
+            leftContent.className = "left-content";
+            main.appendChild(leftContent);
+        }
+        addingLeftSection();
+
+        function addingRightSection() {
+            const rightContent = document.createElement('section');
+            const main = document.getElementsByClassName('main-content')[0];
+            rightContent.className = "right-content";
+            main.appendChild(rightContent);
+        }
+        addingRightSection();
+
+        function img() {
+
+            const leftContent = document.createElement("img");
+            const section = document.getElementsByClassName("left-content")[0];
+            leftContent.className = "small-image";
+            leftContent.src = "https://picsum.photos/200";            
+            section.appendChild(leftContent);
+        }
+        img();
+
+        function addingList() {
+            const UList = document.createElement('ul');
+            const rightContent = document.getElementsByClassName('right-content')[0];
+            const numbers = ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten'];
+            rightContent.appendChild(UList);
+            for (let num in numbers) {
+                const li = document.createElement('li');
+                li.innerText = numbers[num];
+                UList.appendChild(li);
+            }
+        }
+        addingList();
+
+        function adding3H3() {    
+                const main = document.getElementsByClassName('main-content')[0];
+            for (let i = 1; i <= 3; i += 1) {
+                const h3s = document.createElement('h3');
+                h3s.className = "description";
+                h3s.innerText = "Hey there!!!";
+                main.appendChild(h3s);
+            }
+        }
+        adding3H3();
+
+        function rmLeftContent() {
+            const leftContent = document.getElementsByClassName("left-content")[0];
+            const main = document.getElementsByClassName("main-content")[0];
+            main.removeChild(leftContent);
+        }
+        rmLeftContent();
+
+        function centerRContent() {
+            const rightContent = document.getElementsByClassName("right-content")[0];
+            rightContent.style.marginRight = 'auto';
+        }
+        centerRContent();
+
+        function rmListElements() {
+            const UList = document.getElementsByTagName("ul")[0];            
+            UList.lastChild.remove();
+            UList.lastChild.remove();
+        }
+        rmListElements();
+        
+    </script>
+  </body>
+</html>
