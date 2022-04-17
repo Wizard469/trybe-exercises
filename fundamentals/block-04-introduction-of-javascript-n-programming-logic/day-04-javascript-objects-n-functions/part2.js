@@ -15,11 +15,11 @@ console.log(palindromeVerification("caro"));
 
 //2 - Crie uma função que receba um array de inteiros e retorne o índice do maior valor.
 
-function largerIntegerIndex(numbers) {    
+function largerIntegerIndex(arrayN) {    
     let largerIndex = 0;
 
-    for (let index in numbers) {
-        if (largerIndex < numbers[index]) {
+    for (let index in arrayN) {
+        if (largerIndex < arrayN[index]) {
             largerIndex = index;
         }
     }
@@ -29,11 +29,11 @@ console.log(largerIntegerIndex([2, 3, 6, 7, 10, 1]));
 
 //3 - Crie uma função que receba um array de inteiros e retorne o índice do menor valor.
 
-function smallerNumberIndex(numbers) {
-    let smallerNumber = numbers[0];
+function smallerNumberIndex(arrayN) {
+    let smallerNumber = arrayN[0];
 
-    for (let i in numbers) {
-        if (numbers[smallerNumber] > numbers[i]) {
+    for (let i in arrayN) {
+        if (arrayN[smallerNumber] > arrayN[i]) {
             smallerNumber = i;
         }
     }
@@ -53,3 +53,27 @@ function largerString(array) {
     return largerStr;
 }
 console.log(largerString(['José', 'Lucas', 'Nádia', 'Fernanda', 'Cairo', 'Joana']));
+
+//5 - Crie uma função que receba um array de inteiros e retorne o inteiro que mais se repete.
+
+function mostOccurrence(arrayN) {
+    let countRepetition = 0;    
+    let countNumber = 0;
+    let indexNumberRepeated = 0;
+
+    for (let index in arrayN) {
+        let verifyNumber = arrayN[index];
+        for (let index2 in arrayN) {
+        if (verifyNumber === arrayN[index2]) {
+            countNumber += 1;
+        }
+        }
+        if (countNumber > countRepetition) {
+        countRepetition = countNumber;
+        indexNumberRepeated = index;
+        }
+        countNumber = 0;
+    }
+    return arrayN[indexNumberRepeated];
+}
+console.log(mostOccurrence([2, 3, 2, 5, 8, 2, 3]));
