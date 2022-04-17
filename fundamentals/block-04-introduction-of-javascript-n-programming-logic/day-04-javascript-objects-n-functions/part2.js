@@ -88,3 +88,23 @@ function primeNumbers(numbers) {
     return result;
 }
 console.log(primeNumbers(10));
+
+//7 - Crie uma função que receba uma string word e outra string ending. Verifique se a string ending é o final da string word. Considere que a string ending sempre será menor que a string word.
+
+function verifyWordEnding(word, ending) {
+    let reverseWord = word.split('').reverse().join('');
+    let reverseEnding = ending.split('').reverse().join('');
+    let result;
+
+    for (let i = 0; i < reverseEnding.length; i+=1) {
+        if (reverseWord[i] === reverseEnding[i]) {
+            result = true;            
+        } else {
+            result = false;
+        }
+        
+    }
+    return result;
+}
+console.log(verifyWordEnding("trybe", "be"));
+console.log(verifyWordEnding('joaofernando', 'fernan'));
