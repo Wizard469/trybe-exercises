@@ -50,3 +50,18 @@ Os dias 4, 11, 18 e 25 são Sexta-feira. Eles devem conter a classe day e a clas
     }
   }
   createDaysOfTheMonth();
+
+/* Exercício 2:
+Implemente uma função que receba como parâmetro a string "Feriados" e crie dinamicamente um botão com o nome "Feriados".
+Adicione a este botão a ID "btn-holiday".
+Adicione este botão como filho/filha da tag <div> com classe "buttons-container". */
+
+
+  function createButton(button1) {
+    let buttons = document.querySelector('.buttons-container');
+    let button = document.createElement('button');
+    button.id = "btn-holiday";
+    button.innerHTML = button1;
+    buttons.appendChild(button);
+  }
+  createButton("Feriados");
