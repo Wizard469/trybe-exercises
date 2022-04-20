@@ -22,34 +22,35 @@ Os dias devem estar contidos em uma tag <li> , e todos devem ter a classe day . 
 Os dias 24, 25 e 31 são feriados e, além da classe day , devem conter também a classe holiday . Ex: <li class="day holiday">24</li>
 Os dias 4, 11, 18 e 25 são Sexta-feira. Eles devem conter a classe day e a classe friday . Ex: <li class="day friday">4</li>
  */
-  const dezDaysList = [29, 30, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31];
 
-  function createDaysOfTheMonth(){
-    let daysList = document.querySelector('#days');
+const dezDaysList = [29, 30, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31];
 
-    for (let index = 0; index < dezDaysList.length; index += 1) {
-      let day = dezDaysList[index];
-      let dayItem = document.createElement('li');
-      if (day === 24 || day === 31) {
-        dayItem.className = "day holiday";
-        dayItem.innerHTML = day;
-        daysList.appendChild(dayItem);
-      } else if (day === 4 || day === 11 || day === 18) {
-        dayItem.className = "day friday";
-        dayItem.innerHTML = day;
-        daysList.appendChild(dayItem);
-      } else if (day === 25) {
-        dayItem.className = "day holiday friday";
-        dayItem.innerHTML = day;
-        daysList.appendChild(dayItem);
-      } else {
-        dayItem.className = "day";
-        dayItem.innerHTML = day;
-        daysList.appendChild(dayItem);
-      }
+function createDaysOfTheMonth(){
+  let daysList = document.querySelector('#days');
+
+  for (let index = 0; index < dezDaysList.length; index += 1) {
+    let day = dezDaysList[index];
+    let dayItem = document.createElement('li');
+    if (day === 24 || day === 31) {
+      dayItem.className = "day holiday";
+      dayItem.innerHTML = day;
+      daysList.appendChild(dayItem);
+    } else if (day === 4 || day === 11 || day === 18) {
+      dayItem.className = "day friday";
+      dayItem.innerHTML = day;
+      daysList.appendChild(dayItem);
+    } else if (day === 25) {
+      dayItem.className = "day holiday friday";
+      dayItem.innerHTML = day;
+      daysList.appendChild(dayItem);
+    } else {
+      dayItem.className = "day";
+      dayItem.innerHTML = day;
+      daysList.appendChild(dayItem);
     }
   }
-  createDaysOfTheMonth();
+}
+createDaysOfTheMonth();
 
 /* Exercício 2:
 Implemente uma função que receba como parâmetro a string "Feriados" e crie dinamicamente um botão com o nome "Feriados".
@@ -57,11 +58,32 @@ Adicione a este botão a ID "btn-holiday".
 Adicione este botão como filho/filha da tag <div> com classe "buttons-container". */
 
 
-  function createButton(button1) {
-    let buttons = document.querySelector('.buttons-container');
-    let button = document.createElement('button');
-    button.id = "btn-holiday";
-    button.innerHTML = button1;
-    buttons.appendChild(button);
-  }
-  createButton("Feriados");
+function createButton(button1) {
+  let buttons = document.querySelector('.buttons-container');
+  let button = document.createElement('button');
+  button.id = "btn-holiday";
+  button.innerHTML = button1;
+  buttons.appendChild(button);
+}
+createButton("Feriados");
+
+/* Exercício 3:
+Implemente uma função que adicione ao botão "Feriados" um evento de "click" que muda a cor de fundo dos dias que possuem a classe "holiday".
+É interessante que este botão possua também a lógica inversa. Ao ser clicado novamente ele retorna à configuração inicial com a cor "rgb(238,238,238)". */
+
+function buttonHolidayColor() {
+  let holiButton = document.querySelector('#btn-holiday');
+  let holidays = document.querySelectorAll('.holiday');
+
+  holiButton.addEventListener('click', function() {
+    for (let index = 0; index < holidays.length; index += 1) {
+      if (holidays[index].style.backgroundColor === 'white') {
+        holidays[index].style.backgroundColor = 'rgb(238,238,238)';
+      } else {
+        holidays[index].style.backgroundColor = 'white';
+      }
+    }
+  })
+};
+
+buttonHolidayColor();
