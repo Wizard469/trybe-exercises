@@ -50,6 +50,7 @@ function createDaysOfTheMonth(){
     }
   }
 }
+
 createDaysOfTheMonth();
 
 /* Exercício 2:
@@ -65,6 +66,7 @@ function createButton(button1) {
   button.innerHTML = button1;
   buttons.appendChild(button);
 }
+
 createButton("Feriados");
 
 /* Exercício 3:
@@ -73,17 +75,51 @@ Implemente uma função que adicione ao botão "Feriados" um evento de "click" q
 
 function buttonHolidayColor() {
   let holiButton = document.querySelector('#btn-holiday');
-  let holidays = document.querySelectorAll('.holiday');
+  let fridays = document.querySelectorAll('.holiday');
 
   holiButton.addEventListener('click', function() {
-    for (let index = 0; index < holidays.length; index += 1) {
-      if (holidays[index].style.backgroundColor === 'white') {
-        holidays[index].style.backgroundColor = 'rgb(238,238,238)';
+    for (let index = 0; index < fridays.length; index += 1) {
+      if (fridays[index].style.backgroundColor === 'white') {
+        fridays[index].style.backgroundColor = 'rgb(238,238,238)';
       } else {
-        holidays[index].style.backgroundColor = 'white';
+        fridays[index].style.backgroundColor = 'white';
       }
     }
   })
 };
 
 buttonHolidayColor();
+
+/* Exercício 4:
+Implemente uma função que receba como parâmetro a string "Sexta-feira" e crie dinamicamente um botão com o nome "Sexta-feira".
+Adicione a este botão o ID "btn-friday".
+Adicione este botão como filho/filha da tag <div> com classe "buttons-container". */
+
+function sextouButton(button2) {
+  let buttons = document.querySelector('.buttons-container');
+  let button = document.createElement('button');
+  button.id = "btn-friday";
+  button.innerHTML = button2;
+  buttons.appendChild(button);
+}
+
+sextouButton("Sexta-feira");
+
+/* Exercício 5:
+Implemente uma função que adicione ao botão "Sexta-feira" um evento de "click" que modifica o texto exibido nos dias que são Sexta-feira.
+É interessante que este botão possua também a lógica inversa. Ao ser clicado novamente ele retorna à configuração inicial exibindo os dias. */
+
+  let fridayDays = [4, 11, 18, 25];
+
+  let fridayButton = document.querySelector('#btn-friday');  
+
+  fridayButton.addEventListener('click', function() {
+    let fridays = document.getElementsByClassName('friday');
+    for (let index = 0; index < fridays.length; index += 1) {
+      if (fridays[index].innerHTML !== "SEXTOU") {
+        fridays[index].innerHTML = "SEXTOU";
+      } else {
+        fridays[index].innerHTML = fridayDays[index];
+      }
+    }
+  })
