@@ -75,14 +75,14 @@ Implemente uma função que adicione ao botão "Feriados" um evento de "click" q
 
 function buttonHolidayColor() {
   let holiButton = document.querySelector('#btn-holiday');
-  let fridays = document.querySelectorAll('.holiday');
+  let holidays = document.querySelectorAll('.holiday');
 
   holiButton.addEventListener('click', function() {
-    for (let index = 0; index < fridays.length; index += 1) {
-      if (fridays[index].style.backgroundColor === 'white') {
-        fridays[index].style.backgroundColor = 'rgb(238,238,238)';
+    for (let index = 0; index < holidays.length; index += 1) {
+      if (holidays[index].style.backgroundColor === 'white') {
+        holidays[index].style.backgroundColor = 'rgb(238,238,238)';
       } else {
-        fridays[index].style.backgroundColor = 'white';
+        holidays[index].style.backgroundColor = 'white';
       }
     }
   })
@@ -202,3 +202,24 @@ function selectTask() {
 };
 
 selectTask();
+
+/* Exercício 10:
+Implemente uma função que adiciona um evento que, ao clicar em um dia do mês no calendário, atribua a este dia a cor da legenda da sua tarefa selecionada.
+Ao clicar novamente no dia com a cor da legenda, a sua cor deverá voltar à configuração inicial rgb(119,119,119). */
+
+function dayColorChange() {
+  let days = document.querySelector('#days');
+  let selected = document.getElementsByClassName('task selected');
+  let taskColor = document.querySelector('.task').style.backgroundColor;
+
+  days.addEventListener('click', function(event) {
+    let eventTargetColor = event.target.style.color;
+    if (eventTargetColor !== taskColor) {
+      event.target.style.color = selected[0].style.backgroundColor;
+    } else if (eventTargetColor === taskColor) {
+      event.target.style.color = 'rgb(119,119,119)';
+    }
+  });
+};
+
+dayColorChange();
