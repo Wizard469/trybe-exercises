@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TrybeTrip</title>
+    <style>
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    }
+
+    body {
+    color: rgb(93, 96, 99);
+    background-color: rgb(234, 237, 240);
+    font-family: "Helvetica", "Arial", sans-serif;
+    font-size: 16px;
+    line-height: 1.3;
+    }
+
+    .trybe-trip-header {
+    text-align: center;
+    background-color: rgb(246, 247, 248);
+    border: 1px solid rgb(214, 217, 220);
+    border-radius: 3px;
+    width: 80%;
+    margin: 40px 0;
+    padding: 50px;
+    margin-right: auto;
+    margin-left: auto;
+    }
+
+    .trybe-trip-header h1 {
+    font-size: 30px;
+    margin-bottom: 20px;
+    }
+
+    .contestant-form {
+    background-color: rgb(246, 247, 248);
+    border: 1px solid rgb(214, 217, 220);
+    border-radius: 3px;
+    width: 80%;
+    margin: 40px auto;
+    padding: 50px;
+    }
+
+    .form-row {
+    margin-bottom: 40px;
+    }
+
+    .form-row textarea {
+    width: 100%;
+    height: 70px;
+    padding: 15px;
+    }
+
+    .form-line {
+    margin: 20px;
+    border: 0;
+    }
+
+    .form-row input[type="text"] {
+    background-color: white;
+    border: 1px solid rgb(214, 217, 220);
+    border-radius: 3px;
+    font-size: 14px;
+    padding: 7px;
+    width: 100%;
+    }
+
+    .form-row label {
+    margin-bottom: 15px;
+    }
+
+    fieldset {
+    padding: 10px;
+    }
+
+    .buttons {
+        display: inline-block;
+    }
+    </style>
+</head>
+<body>
+    <header class="trybe-trip-header">
+        <h1>Concurso TrybeTrip</h1>
+        <p>Concorra a uma maravilhosa vigem dos seus sonhos!</p>
+    </header>
+    
+    <main>
+        <form action="" class="contestant-form">
+            <div class="form-row">
+                <div class="form-line">
+                    <label for="full-name">Nome Completo:</label>
+                    <input type="text" name="full-name" id="full-name" min="10" maxlength="40" required>
+                </div>
+                <br>
+                <div class="form-line">
+                    <label for="e-mail">E-mail:</label>
+                    <input type="email" name="e-mail" id="e-mail" min="10" maxlength="50" required>
+                </div>
+                <br>
+                <div class="form-line">
+                    <fieldset>
+                        <legend>Destino Preferido:</legend>
+                        <input type="radio" name="destination" id="city" value="city">
+                        <label for="city">Cidade</label>
+                        <input type="radio" name="destination" id="country" value="country">
+                        <label for="country">Campo</label>
+                        <input type="radio" name="destination" id="beach" value="beach">
+                        <label for="beach">Praia</label>
+                        <input type="radio" name="destination" id="mountain" value="mountain">
+                        <label for="mountain">Montanhas</label>
+                    </fieldset>
+                </div>
+                <br>
+                <div class="form-line">
+                    <label for="why">Por que você deveria ser o desenvolvedor(a) a ganhar o concurso TrybeTrip?</label>
+                    <br>
+                    <textarea name="why" id="why" placeholder="Limite de 500 caracteres." maxlength="500" required></textarea>
+                </div>
+                <br>
+                <div class="form-line">
+                    <label for="best-date">Qual a melhor data para realizar sua viagem?</label>
+                    <input type="date" name="date" id="best-date" required>
+                </div>
+                <br>
+                <div class="form-line">
+                    <input type="checkbox" name="news" id="news">
+                    <label for="news">Gostaria de receber outras incríveis oportunidades oferecidas pela Trybe?</label>
+                    <br>
+                    <input type="checkbox" name="permission" id="permission" required>
+                    <label for="permission">Concordo que imagens das minhas férias poderão ser usadas na divulgação de concursos futuros.</label>
+                </div>
+                <br>
+                <div class="form-line">
+                    <div class="buttons">
+                        <button type="submit" id="send" method="get">Enviar</button>
+                    </div>
+                    <div class="buttons">
+                        <button type="reset" id="clrear">Limpar</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
