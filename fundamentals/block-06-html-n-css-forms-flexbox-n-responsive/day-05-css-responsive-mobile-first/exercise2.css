@@ -39,7 +39,7 @@ footer {
 
 @media (min-width: 800px) {
   header {
-    padding:20px;
+    padding: 20px;
   }
 
   h1 {
@@ -66,5 +66,48 @@ footer {
   
   .main-content {
     padding: 20px;
+  }
+}
+
+@media (min-width: 1300px) {
+  header {
+    padding: 20px 8% 1px 8%;
+  }
+
+  header ul {
+    display: flex;
+    justify-content: flex-start;
+    list-style: none;    
+  }
+
+  header ul li {
+    padding-right: 10px;    
+  }
+
+  h1 {
+    font-size: 3rem;
+    text-align: center;
+    padding-bottom: 30px;
+  }
+
+  h2 {
+    text-align: center;
+    font-size: 2.5rem;
+  }
+
+  p {
+    font-size: 20px;
+  }
+
+  .asides-container {
+    padding: 0 10%;
+  }
+
+  .main-content {
+    padding: 0 10%;
+  }
+
+  footer {
+    padding: 1px 10% 1px 10%;
   }
 }
