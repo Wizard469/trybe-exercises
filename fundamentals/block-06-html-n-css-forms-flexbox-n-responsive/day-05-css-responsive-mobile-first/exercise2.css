@@ -1,7 +1,36 @@
 html {
-    box-sizing: border-box;
-  }
-  
-  *, *:before, *:after {
-    box-sizing: inherit;
-  }
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  background-color: #E8DCB8;
+}
+
+header {
+  padding: 10px;
+  background-color: #E0C9A6;
+}
+
+p {
+  font-size: 22px;
+}
+
+.aside-one {
+  padding: 10px;
+}
+
+.aside-two {
+  padding: 10px;
+}
+
+.main-content {
+  padding: 10px;
+}
+
+footer {
+  padding: 10px;
+}
