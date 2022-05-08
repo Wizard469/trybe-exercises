@@ -81,6 +81,58 @@ body {
 
   @media print {
       #header, #navigation, #footer {
-          display: none !important;
+          display: none;
       }
+
+      #content {
+        width: 100%;
+        margin-right: 0px;
+      }
+  }
+
+  @media (max-width: 412px) {
+    body {
+      padding: 0px;
+    }
+    
+    #header {
+      position: fixed;
+      top: 0px;
+      left: 0px;
+      width: 90%;
+      height: 35px;
+    }
+  
+    #navigation {
+      margin-top: 75px;
+    }
+
+    #navigation li a {
+      border-right: 0;
+    }
+
+    #navigation ul {
+      display: block;
+      height: 85px;
+    }
+
+    #content {
+      width: 90%;
+      padding: 1%;
+      margin: auto;
+    }
+
+    #aside {
+      display: none;
+    }
+  
+    img {
+      max-width: 100%;
+      padding: 0;
+    }
+
+    #footer {
+      padding: 1%;
+      height: 1%;
+    }
   }
