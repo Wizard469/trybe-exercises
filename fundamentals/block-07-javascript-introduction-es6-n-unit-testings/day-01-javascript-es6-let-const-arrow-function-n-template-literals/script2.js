@@ -22,3 +22,26 @@ console.log(factorial(10));
 // Recursiva
 // const factorials = (N) => N > 1 ? N * factorials(N - 1) : 1;
 // console.log(factorials(5));
+
+//2. Crie uma função que receba uma frase e retorne qual a maior palavra.
+
+const longestWord = (string) => {
+    const splitWord = string.split(' ');
+    let longestString = "";
+
+    for (let index = 0; index < splitWord.length; index += 1) {
+        if (splitWord[index].length > longestString.length) {
+            longestString = splitWord[index];
+        }
+    }
+
+    return longestString;
+}
+
+console.log(longestWord('Antônio foi no banheiro e não sabemos o que aconteceu')) // retorna 'aconteceu'
+
+//In one line,
+
+// const longestWord = string => string.split(' ').sort((wordA, wordB) => wordB.length - wordA.length)[0];
+
+// console.log(longestWord("Antonio foi no banheiro e não sabemos o que aconteceu"));
