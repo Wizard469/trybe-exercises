@@ -45,3 +45,22 @@ console.log(longestWord('Antônio foi no banheiro e não sabemos o que aconteceu
 // const longestWord = string => string.split(' ').sort((wordA, wordB) => wordB.length - wordA.length)[0];
 
 // console.log(longestWord("Antonio foi no banheiro e não sabemos o que aconteceu"));
+
+
+//3. 🚀 Crie uma página que contenha:
+
+//Um botão ao qual será associado um event listener;
+
+//Uma variável clickCount no arquivo JavaScript que acumule o número de clicks no botão;
+
+//Um campo no HTML que vá atualizando a quantidade de clicks no botão conforme a variável clickCount é atualizada.
+
+const count = document.querySelector('#count');
+
+let clickCounter = 0;
+
+const clickCount = document.querySelector('.click');
+
+clickCount.addEventListener('click', () => {
+    count.innerHTML = clickCounter += 1;
+})
