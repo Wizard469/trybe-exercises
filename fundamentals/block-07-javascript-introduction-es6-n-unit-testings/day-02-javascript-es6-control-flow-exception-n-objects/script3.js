@@ -35,4 +35,10 @@ const lesson1 = {
   const objLength = (obj) => Object.keys(obj).length;
 
   objLength(lesson1);
+
+  //4. Crie uma função para listar os valores de um objeto. Essa função deve receber um objeto como parâmetro.
+
+  const objValuesList = (obj) => Object.values(obj);
+
+  objValuesList(lesson2);
   
