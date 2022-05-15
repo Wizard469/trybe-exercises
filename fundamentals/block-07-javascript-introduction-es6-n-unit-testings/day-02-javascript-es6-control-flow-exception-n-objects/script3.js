@@ -29,4 +29,10 @@ const lesson1 = {
   const objKeysList = (obj) => Object.keys(obj);
 
   objKeysList(lesson3);
+
+  //3. Crie uma função para mostrar o tamanho de um objeto.
+
+  const objLength = (obj) => Object.keys(obj).length;
+
+  objLength(lesson1);
   
