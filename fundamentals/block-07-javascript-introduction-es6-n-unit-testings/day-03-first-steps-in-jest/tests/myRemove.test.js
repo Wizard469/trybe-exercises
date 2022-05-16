@@ -1,0 +1,1 @@
+const hydrate = require('./src/hydrate.js');
