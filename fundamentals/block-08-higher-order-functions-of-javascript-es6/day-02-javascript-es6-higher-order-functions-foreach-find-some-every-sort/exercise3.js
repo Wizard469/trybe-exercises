@@ -78,4 +78,11 @@ const books = [
 
 function getNamedBook() {
   // escreva seu código aqui
+  return books.find((book) => {
+    if (book.name.length = 26) {
+      return book;
+    }
+  });
 }
+
+console.log(getNamedBook(books));
