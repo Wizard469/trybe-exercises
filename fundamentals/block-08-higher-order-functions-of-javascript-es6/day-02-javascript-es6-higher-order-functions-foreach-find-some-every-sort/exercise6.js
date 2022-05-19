@@ -69,4 +69,7 @@ const books = [
 
 function someBookWasReleaseOnThe80s() {
   // escreva seu código aqui
+  return books.some((element) => element.releaseYear >= 1981 && element.releaseYear <= 1990);
 }
+
+console.log(someBookWasReleaseOnThe80s(books));
