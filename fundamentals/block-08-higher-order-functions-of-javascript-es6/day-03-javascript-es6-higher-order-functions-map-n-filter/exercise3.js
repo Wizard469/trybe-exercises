@@ -67,7 +67,7 @@ const books = [
 
 // • Dica: use a função filter;
 
-const expectedResult = [
+/* const expectedResult = [
   {
     id: 1,
     name: 'As Crônicas de Gelo e Fogo',
@@ -96,8 +96,11 @@ const expectedResult = [
     author: { name: 'Frank Herbert', birthYear: 1920 },
     releaseYear: 1965
   }
-];
+]; */
 
 function fantasyOrScienceFiction() {
   // escreva seu código aqui
-}
+  return books.filter((element) => (element.genre === 'Ficção Científica' || element.genre === 'Fantasia'));
+};
+
+console.log(fantasyOrScienceFiction());
