@@ -70,5 +70,20 @@ const books = [
 // const expectedResult = 'O Senhor dos Anéis';
 
 function authorWith3DotsOnName() {
-  // escreva seu código aqui
+  return books.find(({ author }) => (
+    author.name.split(' ')
+      .filter((word) => word.endsWith('.')).length === 3
+  )).name;
 }
+
+//Another way
+
+/* function authorWith3DotsOnName() {
+  return books.filter(({ author }) => (
+    author.name[1] === '.'
+    && author.name[4] === '.'
+    && author.name[7] === '.'
+  ))[0].name
+} */
+
+console.log(authorWith3DotsOnName());
