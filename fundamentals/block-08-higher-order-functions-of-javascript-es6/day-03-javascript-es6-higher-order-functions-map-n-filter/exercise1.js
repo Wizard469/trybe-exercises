@@ -77,8 +77,7 @@ const books = [
 // ];
 
 function formatedBookNames() {
-  // escreva seu código aqui
-  return books.map((element) => `${element.name} - ${element.genre} - ${element.author.name}`);
+  return books.map(({ name, genre, author }) => `${name} - ${genre} - ${author.name}`);
 };
 
 console.log(formatedBookNames());

@@ -95,7 +95,6 @@ const books = [
 ]; */
 
 function nameAndAge() {
-  // escreva seu código aqui
   return books.map((book) =>  (
     {
       age: book.releaseYear - book.author.birthYear,

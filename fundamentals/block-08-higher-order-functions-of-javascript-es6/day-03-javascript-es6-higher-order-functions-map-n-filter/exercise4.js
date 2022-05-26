@@ -92,8 +92,8 @@ const books = [
 ]; */
 
 function oldBooksOrdered() {
-  // escreva seu código aqui// Found new Date().getFullYear() at Grepper.
-  return books.filter((book) => (new Date().getFullYear() - book.releaseYear >= 60)).sort((a, b) => a.releaseYear - b.releaseYear)
+  // Found new Date().getFullYear() at Grepper.
+  return books.filter(({ releaseYear }) => (new Date().getFullYear() - releaseYear >= 60)).sort((a, b) => a.releaseYear - b.releaseYear)
 };
 
 console.log(oldBooksOrdered());

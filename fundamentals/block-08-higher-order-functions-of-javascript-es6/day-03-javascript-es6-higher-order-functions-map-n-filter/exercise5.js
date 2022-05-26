@@ -72,6 +72,9 @@ const books = [
   'J. R. R. Tolkien',
 ]; */
 
+
 function fantasyOrScienceFictionAuthors() {
-  // escreva seu código aqui
+  return books.filter(({ genre }) => (genre === 'Ficção Científica' || genre === 'Fantasia')).map(({ author }) => author.name).sort();
 }
+
+console.log(fantasyOrScienceFictionAuthors())
