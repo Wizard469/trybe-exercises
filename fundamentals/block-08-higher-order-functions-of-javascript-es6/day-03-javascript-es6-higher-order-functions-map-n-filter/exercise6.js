@@ -72,5 +72,7 @@ const books = [
 ]; */
 
 function oldBooks() {
-  // escreva seu código aqui
+  return books.filter(({ releaseYear }) => (new Date().getFullYear() - releaseYear > 60)).map(({ name }) => name);
 }
+
+console.log(oldBooks());
