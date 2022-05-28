@@ -76,6 +76,10 @@ const books = [
   releaseYear: 1991,
 }; */
 
+const longestNamedBook = 
+
 function longestNamedBook() {
-  // escreva seu código aqui
+  return books.reduce((acc, curr) => (acc.name.length < curr.name.length) ? curr : acc);
 }
+
+console.log(longestNamedBook());
