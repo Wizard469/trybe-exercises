@@ -1,1 +1,1 @@
-const encodeDecode = require('./src/encodeDecode.js');
+const encodeDecode = require('../src/encodeDecode.js');

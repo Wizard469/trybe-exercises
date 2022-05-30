@@ -1,1 +1,1 @@
-const hydrate = require('./src/hydrate.js');
+const hydrate = require('../src/hydrate.js');

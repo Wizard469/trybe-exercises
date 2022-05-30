@@ -1,1 +1,1 @@
-const myFizzBuzz = require('./src/myFizzBuzz.js');
+const myFizzBuzz = require('../src/myFizzBuzz.js');
