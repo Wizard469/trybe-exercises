@@ -1,5 +1,7 @@
 const hydrate = require('../src/hydrate.js');
 
+// Implemente a função hydrate a partir dos testes abaixo. Experimente refatorar a função que você criou para o projeto Playground Function! É importante nunca alterar os testes ou as variáveis já escritas no código.
+
 describe('Testa a função hydrate', () => {
   it('Testa se a função hydrate é definida', () => {
     expect(hydrate).toBeDefined();
