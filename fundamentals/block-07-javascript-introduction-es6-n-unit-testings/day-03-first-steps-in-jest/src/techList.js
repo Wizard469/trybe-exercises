@@ -5,19 +5,21 @@
 //     name: name,
 // }
 
+//Refactored...
+
 function techList(array, name) {
-let newList = [];
+  // let newList = [];
 
-if (array[0] === undefined) {
-    return "Vazio!";
-}
+  if (array[0] === undefined) return "Vazio!";
 
-let sorted = array.sort();
+  const sorted = array.sort();
 
-for (let item of sorted) {
-    newList.push({tech: item, name: name})
-}
-return newList;
+  return sorted.map((tech) => ({ tech: tech, name: name }));
+
+  // for (let item of sorted) {
+  //     newList.push({tech: item, name: name})
+  // }
+  // return newList;
 }
 
 module.exports = techList;

@@ -1,5 +1,7 @@
 const techList = require('../src/techList.js');
 
+// Implemente a função techList a partir dos testes abaixo. Experimente refatorar a função que você criou para esse projeto! É importante nunca alterar os testes ou as variáveis já escritas no código.
+
 describe('Testa a função techList', () => {
   it('Testa se a função techList é definida', () => {
     expect(techList).toBeDefined();
