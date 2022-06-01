@@ -31,4 +31,6 @@ console.log(planetDistanceFromSun(mars)); // A
 console.log(planetDistanceFromSun(venus)); // B
 console.log(planetDistanceFromSun(jupiter)); // C
 
-// The order is A, B and C.
+//Answer:
+
+// The correct order is A, B and C.
