@@ -24,8 +24,9 @@ const fetchCriptos = async () => {
 const setUpCurrencies = async () => {
   const currencies = await fetchCriptos();
   const currenciesList = document.getElementById("currencies-container");
-  
-  currencies.forEach(({ name, symbol, priceUsd, }) => {
+
+  currencies.filter((currency) => currency.rank <= 10)
+    .forEach(({ name, symbol, priceUsd, }) => {
     const newLi = document.createElement('li');
     const usd = Number(priceUsd);
 
@@ -37,3 +38,6 @@ const setUpCurrencies = async () => {
 
 window.onload = () => setUpCurrencies();
 
+//Another way:
+
+// .filter((_, index) => index < 10)
