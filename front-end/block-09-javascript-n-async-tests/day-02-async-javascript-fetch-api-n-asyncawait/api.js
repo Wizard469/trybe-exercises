@@ -10,6 +10,10 @@
 
 // 5. Não se esqueça de estilizar a página conforme o seu estilo (tanto no CSS quanto no HTML).
 
+// Bônus
+
+// 1. Que tal usarmos uma API para converter o preço das crypto moedas do exercício anterior para a nossa moeda local ao invés de mostrar o seu valor em dólar?
+
 const fetchCriptos = async () => {
   const API_URL = `https://api.coincap.io/v2/assets`;
   
@@ -21,16 +25,31 @@ const fetchCriptos = async () => {
   return currencies;
 };
 
+const fetchUsdCurrencyRates = async () => {
+  const baseUrl = 'https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest'
+  const usdEndpoint  = '/currencies/usd.min.json'
+  const url = baseUrl.concat(usdEndpoint);
+
+  const usdRates = await fetch(url)
+    .then((response) => response.json())
+    .then(({ usd }) => usd)
+    .catch((err) => err.toString());
+
+  return usdRates;
+};
+
 const setUpCurrencies = async () => {
   const currencies = await fetchCriptos();
+  const usdRates = await fetchUsdCurrencyRates();
   const currenciesList = document.getElementById("currencies-container");
 
   currencies.filter((currency) => currency.rank <= 10)
     .forEach(({ name, symbol, priceUsd, }) => {
     const newLi = document.createElement('li');
     const usd = Number(priceUsd);
+    const brlRate = usd * usdRates.brl;
 
-    newLi.innerText = `${name} (${symbol}): $${usd.toFixed(2)}`;
+    newLi.innerText = `${name} (${symbol}): $${usd.toFixed(2)}  //  R$${brlRate.toFixed(2)}`;
 
     currenciesList.appendChild(newLi);
   });
