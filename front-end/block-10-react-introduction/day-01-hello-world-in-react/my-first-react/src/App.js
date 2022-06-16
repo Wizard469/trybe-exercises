@@ -9,12 +9,10 @@ const Task = (value) => {
 
 const TaskList = ['Go to the gym', 'Go to the shopping mall', 'Relax at home', 'Sleep at 8:00pm'];
 
-// const eachTask = TaskList.map((task) => Task(task));
-
 class App extends Component {
   render() {
     return (
-      TaskList.map((task) => Task(task))
+      <ul>{TaskList.map((task) => Task(task))}</ul>
     );
   };
 };
