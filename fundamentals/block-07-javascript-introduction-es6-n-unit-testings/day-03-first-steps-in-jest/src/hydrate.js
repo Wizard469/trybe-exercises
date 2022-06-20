@@ -15,14 +15,20 @@
 // retorno da função
 // '2 copos de água'
 
-/* function hydrate(string) {
-  const stringToString = parceInt(string.match(/\D/g));
-  console.log(stringToString);
-} */
+function hydrate(string) {
+  const strToNumStr = string.replace(/\D/g, '');
+  const NumStrToNum = strToNumStr.split('').map(x=>+x).reduce((acc, curr) => (acc + curr), 0);
+  //Another way:
+  //strToNumStr.split('').reduce((acc, curr) => parseInt(acc) + parseInt(curr), 0);
+  if (NumStrToNum === 1) return `${NumStrToNum} copo de água`;
+  return `${NumStrToNum} copos de água`;
+}
 
-const srt = '1 cerveja, 2 shots e 1 catuaba';
+// const str = '1 cerveja, 2 shots e 1 catuaba';
 
-const stringToStrin = parceInt(str.match(/\D/g));
-  console.log(stringToStrin);
+// console.log(hydrate(str));
+
+// const StringToNumber = parseInt(str.replace(/\D/g, ''));
+//   console.log(StringToNumber);
 
 module.exports = hydrate;
