@@ -2,43 +2,9 @@ import { Component } from 'react';
 
 const states = ['Acre', 'Alagoas', 'Amapá', 'Amazonas', 'Bahia', 'Ceará', 'Distrito Federal', 'Espírito Santo', 'Goiás', 'Maranhão', 'Mato Grosso', 'Mato Grosso do Sul', 'Minas Gerais', 'Pará', 'Paraíba','Paraná', 'Pernambuco', 'Piauí', 'Rio de Janeiro', 'Rio Grande do Norte', 'Rio Grande do Sul', 'Rondônia', 'Roraima', 'Santa Catarina', 'São Paulo', 'Sergipe', 'Tocantins'];
 
-const INITIAL_STATE = {
-  name: '',
-  email: '',
-  cpf: '',
-  address: '',
-  city: '',
-  state: '',
-  housingType: '',
-}
-
 class PersonalForm extends Component {
-  constructor() {
-    super();
-    this.state = INITIAL_STATE;
-  }
-
-  validateAddress = (address) => address.replace(/[^\w\s]/gi, '');
-
-  handleChange = ({ target }) => {
-    const { name } = target;
-    let { value } = target;
-
-    if (name === 'name') value = value.toUpperCase();
-    if (name === 'address') value = this.validateAddress(value);
-    this.setState({ [name]: value });
-  }
-
-  handleOnBlur = ({ target }) => {
-    const { name } = target;
-    let { value } = target;
-
-    if (name === 'city') value = value.match(/^\d/) ? '' : value;
-    this.setState({ [name]: value });
-  }
-
   render() {
-    const { name, email, cpf, address, city } = this.state;
+    const { state: { name, email, cpf, address, city }, handleChange, handleOnBlur } = this.props;
     return (
       <fieldset>
         <legend>Personal data</legend>
@@ -52,7 +18,7 @@ class PersonalForm extends Component {
               value={ name }
               maxLength={40}
               required
-              onChange={ this.handleChange }
+              onChange={ handleChange }
             />
           </label>
         </div>
@@ -66,7 +32,7 @@ class PersonalForm extends Component {
               value={ email }
               maxLength={50}
               required
-              onChange={ this.handleChange }
+              onChange={ handleChange }
             />
           </label>
         </div>
@@ -80,7 +46,7 @@ class PersonalForm extends Component {
               value={ cpf }
               maxLength={11}
               required
-              onChange={ this.handleChange }
+              onChange={ handleChange }
             />
           </label>
         </div>
@@ -93,7 +59,7 @@ class PersonalForm extends Component {
             value={ address }
             maxLength={200}
             required
-            onChange={ this.handleChange }
+            onChange={ handleChange }
           />
           </label>
         </div>
@@ -107,8 +73,8 @@ class PersonalForm extends Component {
               value={ city }
               maxLength={28}
               required
-              onBlur={ this.handleOnBlur }
-              onChange={ this.handleChange }
+              onBlur={ handleOnBlur }
+              onChange={ handleChange }
             />
           </label>
         </div>
@@ -119,7 +85,7 @@ class PersonalForm extends Component {
               name="state"
               id="state"
               required
-              onChange={ this.handleChange }
+              onChange={ handleChange }
               defaultValue=""
             >
               <option value="">Select</option>
@@ -140,7 +106,7 @@ class PersonalForm extends Component {
               id="house"
               required
               value="House"
-              onChange={ this.handleChange }
+              onChange={ handleChange }
             />
           </label>
           <label htmlFor="Apartment">
@@ -150,7 +116,7 @@ class PersonalForm extends Component {
               name="housingType"
               id="Apartment"
               value="Apartment"
-              onChange={ this.handleChange }
+              onChange={ handleChange }
             />
           </label>
         </div>
