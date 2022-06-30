@@ -1,4 +1,5 @@
 import { Component } from 'react';
+import DisplayFormData from './DisplayFormData';
 import PersonalForm from './PersonalForm';
 import ProfessionalForm from './ProfessionalForm';
 
@@ -13,6 +14,7 @@ const INITIAL_STATE = {
   resume: '',
   role: '',
   roleDescription: '',
+  submitted: false,
 }
 
 class Form extends Component {
@@ -39,22 +41,34 @@ class Form extends Component {
     if (name === 'city') value = value.match(/^\d/) ? '' : value;
     this.setState({ [name]: value });
   }
+
+  sendedForm = (event) => {
+    event.preventDefault();
+    this.setState({ submitted: true });
+  }
   
   render() {
+    const { submitted } = this.state;
     return (
-     <form>
-      <div>Registration</div>
-      <PersonalForm
-        handleChange={ this.handleChange }
-        handleOnBlur={ this.handleOnBlur }
-        state={ this.state }
-      />
-      <ProfessionalForm
-        handleChange={ this.handleChange }
-        handleOnBlur={ this.handleOnBlur }
-        state={ this.state }
-      />
-     </form>
+      <div>
+        <form onSubmit={ this.sendedForm }>
+          <div>Registration</div>
+          <PersonalForm
+            handleChange={ this.handleChange }
+            handleOnBlur={ this.handleOnBlur }
+            state={ this.state }
+          />
+          <ProfessionalForm
+            handleChange={ this.handleChange }
+            handleOnBlur={ this.handleOnBlur }
+            state={ this.state }
+          />
+          <input type="submit" value="Send" />
+        </form>
+        {
+          submitted && (<DisplayFormData state={ this.state } />)
+        }
+      </div>
     );
   }
 }
