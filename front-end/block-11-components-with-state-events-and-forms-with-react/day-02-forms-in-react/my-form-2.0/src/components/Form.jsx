@@ -42,16 +42,18 @@ class Form extends Component {
     this.setState({ [name]: value });
   }
 
-  sendedForm = (event) => {
+  sentForm = (event) => {
     event.preventDefault();
     this.setState({ submitted: true });
   }
+
+  resetForm = () => { this.setState(INITIAL_STATE); }
   
   render() {
     const { submitted } = this.state;
     return (
       <div>
-        <form onSubmit={ this.sendedForm }>
+        <form onSubmit={ this.sentForm }>
           <div>Registration</div>
           <PersonalForm
             handleChange={ this.handleChange }
@@ -64,6 +66,7 @@ class Form extends Component {
             state={ this.state }
           />
           <input type="submit" value="Send" />
+          <input type="reset" value="Reset" onClick={ this.resetForm } />
         </form>
         {
           submitted && (<DisplayFormData state={ this.state } />)
