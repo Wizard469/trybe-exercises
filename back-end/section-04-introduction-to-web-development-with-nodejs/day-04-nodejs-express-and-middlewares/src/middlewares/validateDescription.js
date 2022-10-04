@@ -1,5 +1,5 @@
 const validateDescription = (descriptionValeu, res, value) => {
-  if (!descriptionValeu) {
+  if (descriptionValeu === undefined) {
     return res.status(400).json(
       { "message": `O campo ${value} é obrigatório` }
       );
